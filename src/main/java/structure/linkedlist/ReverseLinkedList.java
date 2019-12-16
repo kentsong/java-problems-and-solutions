@@ -1,33 +1,53 @@
 package structure.linkedlist;
 
+import leetcode.T002.AddTwoNumbers;
+
 public class ReverseLinkedList {
 
     /**
      * Reverse a singly linked list.
-     *
+     * <p>
      * Example:
-     *
+     * <p>
      * Input: 1->2->3->4->5->NULL
      * Output: 5->4->3->2->1->NULL
      * Follow up:
-     *
+     * <p>
      * A linked list can be reversed either iteratively or recursively. Could you implement both?
-     *
+     * <p>
      * 来源：力扣（LeetCode）
      * 链接：https://leetcode-cn.com/problems/reverse-linked-list
-     *
      */
 
     public static void main(String[] args) {
+        ListNode n1 = new ListNode(5);
+        ListNode n2 = new ListNode(1);
+        ListNode n3 = new ListNode(1);
+        n1.setNext(n2);
+        n2.setNext(n3);
 
+        ReverseLinkedList client = new ReverseLinkedList();
+        client.reverseList_planA(n1);
+        n3.print();
     }
 
-    public class ListNode {
+    public static class ListNode {
         int val;
         ListNode next;
 
         ListNode(int x) {
             val = x;
+        }
+
+        public void setNext(ListNode next) {
+            this.next = next;
+        }
+
+        public void print() {
+            System.out.println(val);
+            if (this.next != null) {
+                this.next.print();
+            }
         }
     }
 
@@ -39,7 +59,7 @@ public class ReverseLinkedList {
     public ListNode reverseList_planA(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
-        while (curr != null){
+        while (curr != null) {
             ListNode nextNode = curr.next;
             curr.next = prev;
             prev = curr;
@@ -52,7 +72,7 @@ public class ReverseLinkedList {
      * 方法一：递归
      * 时间复杂度：O(n)
      * 空间复杂度：O(n)
-     *
+     * <p>
      * Tips：從最後面查找遞歸往前推進
      */
     public ListNode reverseList(ListNode head) {
@@ -75,8 +95,6 @@ public class ReverseLinkedList {
      * 处理完后返回的是4 -> 3
      * 依次向上
      */
-
-
 
 
 }
