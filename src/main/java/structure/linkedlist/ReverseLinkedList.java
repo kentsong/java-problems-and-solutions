@@ -1,4 +1,4 @@
-package linkedlist;
+package structure.linkedlist;
 
 public class ReverseLinkedList {
 

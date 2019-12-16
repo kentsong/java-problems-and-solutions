@@ -1,7 +1,6 @@
-package stack;
+package structure.stack;
 
 import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
