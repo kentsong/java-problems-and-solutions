@@ -7,7 +7,7 @@ public class MergeSort {
     public static void main(String[] args) {
         int[] nums = new int[]{2, 1, 7, 9, 5, 8};
         System.out.println("before nums = " + Arrays.toString(nums));
-        mergeSort(nums, nums.length);
+        mergeSort(nums);
         System.out.println("after nums = " + Arrays.toString(nums));
     }
 
@@ -15,10 +15,9 @@ public class MergeSort {
      * 归并排序
      *
      * @param a 待排序的数组
-     * @param n 数组大小
      */
-    public static void mergeSort(int[] a, int n) {
-        sort(a, 0, n - 1);
+    public static void mergeSort(int[] a) {
+        sort(a, 0, a.length - 1);
     }
 
     static void sort(int[] A, int lo, int hi) {
@@ -36,24 +35,24 @@ public class MergeSort {
         merge(A, lo, mid, hi);
     }
 
-    static int  count = 0;
+    static int count = 0;
 
     static void merge(int[] nums, int lo, int mid, int hi) {
-        System.out.println("------- 第"+(++count)+"次 merge -------");
-        System.out.println("=== row ===, nums= " + Arrays.toString(nums) + ", lo=" + lo + ", mid=" + mid + ", hi=" + hi);
+//        System.out.println("------- 第" + (++count) + "次 merge -------");
+//        System.out.println("=== row ===, nums= " + Arrays.toString(nums) + ", lo=" + lo + ", mid=" + mid + ", hi=" + hi);
         // 复制一份原来的数组
         int[] copy = nums.clone();
 
         // 定义一个 k 指针表示从什么位置开始修改原来的数组，i 指针表示左半边的起始位置，j 表示右半边的起始位置
         int k = lo, i = lo, j = mid + 1;
-        System.out.println("=== index ===, k=" + k + ", i=" + i + ", j=" + j);
+//        System.out.println("=== index ===, k=" + k + ", i=" + i + ", j=" + j);
 
         while (k <= hi) {
-            if (i > mid) {
+            if (i > mid) { //每部位结尾判断
                 nums[k++] = copy[j++];
             } else if (j > hi) {
                 nums[k++] = copy[i++];
-            } else if (copy[j] < copy[i]) {
+            } else if (copy[j] < copy[i]) { //比大小关键代码
                 nums[k++] = copy[j++];
             } else {
                 nums[k++] = copy[i++];
