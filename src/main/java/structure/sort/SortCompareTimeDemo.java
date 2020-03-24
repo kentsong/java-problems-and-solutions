@@ -34,6 +34,11 @@ public class SortCompareTimeDemo {
         MergeSort.mergeSort(nums.clone());
         end = System.currentTimeMillis();
         System.out.println("MargeSort spent time="+(end - start));
+
+        start = System.currentTimeMillis();
+        QuickSort.quickSort(nums.clone());
+        end = System.currentTimeMillis();
+        System.out.println("QuickSort spent time="+(end - start));
     }
 
 
