@@ -27,7 +27,7 @@ public class ReverseLinkedList {
         n2.setNext(n3);
 
         ReverseLinkedList client = new ReverseLinkedList();
-        client.reverseList_planA(n1);
+        client.reverseList(n1);
         n3.print();
     }
 
