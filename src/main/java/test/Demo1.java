@@ -14,7 +14,20 @@ public class Demo1 {
 //        System.out.println(str);
 
 
-        String format = "%02d";
-        System.out.println(String.format(format, 100));
+//        String format = "%02d";
+//        System.out.println(String.format(format, 100));
+
+        Data data = new Data();
+//        data.setFlag(null);
+
+
+    }
+
+    public static class Data{
+        private boolean flag;
+
+        public void setFlag(boolean flag) {
+            this.flag = flag;
+        }
     }
 }
